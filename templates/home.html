@@ -1,0 +1,117 @@
+{%extends "base.html"%}
+{%block title%}Head{%endblock%}
+{%block content%}
+{%load static%}
+<script src="{% static 'css/main.css' %}"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div id="homediv">
+    <img src="{% static 'images/img12.jpg' %}" height="500px" width="100%" >
+ <div class="homecentered" style="opacity: 0.8; border: 0px;" >
+        <h1 id="abh1" style="opacity: 0.9; padding: 10x; text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif ; font-size: 40px;" >Choose Your Ride!</h1>
+        <th>
+            <form action="" method="post" style="background-color: #c5c0c3;margin-bottom: 0px;border-radius: 5px;">
+              {%csrf_token%}
+              <table style="width: 50%; margin-left: 0px; ">
+                <tr >
+                  <td style="padding: 10px;">
+                    <label style="padding: 10px; opacity: 1.0; color: rgb(196, 50, 50);">Where!</label><br>
+                    <select name="Where" id="cars" style="border: 0px; width: 200%;">
+                      <option value="volvo">Choose..</option>
+                      <option value="volvo">Trivandrum</option>
+                      <option value="saab">Kochi</option>
+                      <option value="opel">Calicut</option>
+                      <option value="audi">Chennai</option>
+                    </select>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td style="padding: 10px;">
+                    <label style="padding: 10px; opacity: 1.0; color: rgb(196, 50, 50);">When!</label><br>
+                    <input type="date" name="when" style="border: 0px; width: 200%;"><br>
+                  </td>
+                </tr> 
+                  <tr>
+                 <td style="margin-bottom: 0px;">
+                    <input type="button" value="Submit"  onclick="myFunction()" style="border: 0px; border-radius: 5px; width:100%; margin-left: 85px;  margin-bottom: 10px;  margin-top: 10px; color: azure; background-color: rgb(255, 60, 60);">
+              <script>
+                function myFunction() {
+                  alert(window.location='login')
+                }
+                </script>
+                </td>
+            </tr>     
+          </th>
+        </table>
+    </form>
+</div>
+
+
+<section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <h2><span>RENT'n'GO</span>  the best rental service from New Kochi </h2>
+        <p>Blanditiis praesentium aliquam illum tempore incidunt debitis dolorem magni est deserunt sed qui libero. Qui voluptas amet.</p>
+        <a href="login" class="btn-btn-danger"
+        style="border: 0px; border-radius: 5px; width:130%; text-decoration: none;padding: 10px;  
+         color: azure; background-color: rgb(255, 60, 60);">
+        Book your Ride</a>
+      </div>
+    </div>
+  </div>
+
+
+  
+</div>
+</div><br><br>
+
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+  </ol>
+
+
+  <div class="carousel-inner">
+    <div class="item active c-item">
+      <img src="{% static 'images/img3.jpg' %}" alt="Los Angeles" style="width:100%;height: 600px;">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/img4.jpg' %}" alt="Chicago" style="width:100%;height: 600px;">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/img5.jpg' %}" alt="Chicago" style="width:100%;height: 600px;">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/img6.jpg' %}" alt="Chicago" style="width:100%;height: 600px;">
+    </div>
+  
+    <div class="item">
+      <img src="{% static 'images/img7.jpg' %}" alt="New york" style="width:100%;height: 600px;">
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+{%endblock%}

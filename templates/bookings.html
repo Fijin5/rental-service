@@ -1,0 +1,38 @@
+{%extends "base.html"%}
+{%block title%}Head{%endblock%}
+{%block content%}
+{%load static%}
+{% static "images/cars" as baseUrl %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="{% static 'css/main.css' %}"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="bookingsdiv">
+{% for book in book%}
+
+          </div>
+          <div class="card mb-3" style="width: 100%; height:50%;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{book.img.Url}}" class="card-img" alt="..." style="height: 101%;">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">{{book.name}}</h2>
+        <p class="card-text">{{book.desc}}</p>
+        <p class="card-text">For Rs {{book.price}} per day</p>
+        <input type="button" value="Book" onclick="bookfunction()" style="width: 200px; border: 0px; border-radius: 5px; margin-left: 50%px;padding: 10px;  margin-bottom: 0px;  margin-top: 10px; color: azure; background-color: rgb(255, 60, 60);">
+              </div>
+            <script>
+            function bookfunction() {
+                alert("Booking Successfull!!");
+              }
+              </script>
+      </div>
+    </div>
+  </div>
+</div>        
+  {% endfor %}
+  {%endblock%}
